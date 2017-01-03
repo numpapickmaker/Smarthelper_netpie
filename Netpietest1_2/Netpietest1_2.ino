@@ -61,7 +61,8 @@ void onMsghandler(char *topic, uint8_t* msg, unsigned int msglen) {
   } else if (mStr == "LED2OFF") {
     digitalWrite(LED2PIN, LOW);
     microgear.chat(ALIAS4, mStr);
-  } else if ( mStr.indexOf("#Time")>-1) {
+  } 
+    else if ( mStr.indexOf("#Time")>-1) {
     //setRealtime
     RealTime = mStr;
 
@@ -81,20 +82,19 @@ void onConnected(char *attribute, uint8_t* msg, unsigned int msglen) {
 }
 
 void BatteryADC() {
-  if (timerAnalog >= 1000) {
+  if (timerAnalog >= 100000) {
     val = (analogRead(analogPin) * 100) / 1023; //convert to %
     microgear.chat(ALIAS2, (String)val);
     Serial.println(val);
     timerAnalog = 0;
-    microgear.chat(ALIAS3, "Normal");
+    microgear.chat(ALIAS3, "Normal"+RealTime);
+    setInformation();
   }
   timerAnalog++;
 }
 void setInformation() {
-  if (timerAnalog >= 1000) {
-    microgear.chat(ALIAS5, NameSurname);
-    microgear.chat(ALIAS6, WeightHeightAge);
-  }
+  microgear.chat(ALIAS5, NameSurname);
+  microgear.chat(ALIAS6, WeightHeightAge);
 }
 
 void IMU() {
@@ -166,8 +166,9 @@ void loop() {
   //  if (conf.isConnected()) {
   if (microgear.connected()) {
     microgear.loop();
-    setInformation();
-    //BatteryADC();
+   // setInformation();
+    BatteryADC();
+    
   } else {
     if (millis() - timer >= 5000) {
       Serial.println("connection lost, reconnect...");
