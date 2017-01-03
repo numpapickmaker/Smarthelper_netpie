@@ -1,0 +1,254 @@
+{
+ "version": "application/octet-stream",
+ "allow_edit": true,
+ "plugins": [],
+ "panes": [
+  {
+   "width": 1,
+   "row": {
+    "2": 1,
+    "3": 1,
+    "4": 1
+   },
+   "col": {
+    "2": 1,
+    "3": 2,
+    "4": 2
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "gauge",
+     "settings": {
+      "title": "Battery ",
+      "value": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/Poten\"]\n",
+      "units": "V(%)",
+      "min_value": 0,
+      "max_value": 100
+     }
+    },
+    {
+     "type": "sparkline",
+     "settings": {
+      "value": [
+       "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/Poten\"]"
+      ],
+      "include_legend": true,
+      "legend": "%(maximum = 3.8V)"
+     }
+    }
+   ]
+  },
+  {
+   "width": 1,
+   "row": {
+    "2": 1,
+    "3": 1,
+    "4": 1
+   },
+   "col": {
+    "2": 2,
+    "3": 3,
+    "4": 3
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "แสดงข้อมูล",
+      "size": "regular",
+      "value": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/led\"]",
+      "sparkline": false,
+      "animate": true
+     }
+    },
+    {
+     "type": "Button",
+     "settings": {
+      "caption": "ON",
+      "text": "ON",
+      "color": "green",
+      "onClick": "microgear[\"dashboard\"].chat(\"testled\",\"LED2ON\")"
+     }
+    },
+    {
+     "type": "Button",
+     "settings": {
+      "caption": "OFF",
+      "text": "OFF",
+      "color": "red",
+      "onClick": "microgear[\"dashboard\"].chat(\"testled\",\"LED2OFF\")"
+     }
+    },
+    {
+     "type": "Toggle",
+     "settings": {
+      "ontext": "ON",
+      "offtext": "OFF",
+      "onaction": "microgear[\"dashboard\"].chat(\"testled\",\"LED2ON\")",
+      "offaction": "microgear[\"dashboard\"].chat(\"testled\",\"LED2OFF\")"
+     }
+    },
+    {
+     "type": "indicator",
+     "settings": {
+      "value": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/testled\"]==\"LED2ON\"",
+      "on_text": "ON",
+      "off_text": "OFF"
+     }
+    }
+   ]
+  },
+  {
+   "width": 1,
+   "row": {
+    "2": 13,
+    "3": 1,
+    "4": 1
+   },
+   "col": {
+    "2": 2,
+    "3": 1,
+    "4": 4
+   },
+   "col_width": "1",
+   "widgets": [
+    {
+     "type": "html",
+     "settings": {
+      "html": "<div style=\"text-align: center;\">\n<span style=\"font-family: Arial, Helvetica, sans-serif; font-size: large;\">Contract Us</span><br />\n<a href=\"https://numpapickyoungmaker.blogspot.com/\"><span style=\"font-family: Arial, Helvetica, sans-serif;\">https://numpapickyoungmaker.blogspot.com</span></a><br />\n<br />\n</div>\n",
+      "height": 1
+     }
+    },
+    {
+     "type": "html",
+     "settings": {
+      "html": "<div style=\"text-align: center;\">\n<span id=\"docs-internal-guid-bd57d91e-5126-88a5-514b-f3c3ebb09ebe\">&nbsp;</span><img height=\"220\" src=\"https://lh5.googleusercontent.com/cI6Fmfb6iNuIc8w1r4BikOs9qFHA_-eskGOBHY2nbkSnGThMqTYELtcVBvQPTwYLRTrrne9_H6kfzQc5oL_LLghL0rvKn6gZ3m_I_lyxbubO0iiBAMaFkSEAehjLOtj61HXKIJq-\" style=\"border: none; font-family: Arial; font-size: 14.6667px; transform: rotate(0rad); white-space: pre-wrap;\" width=\"300\" /></div>",
+      "height": 4
+     }
+    }
+   ]
+  },
+  {
+   "title": "Infromation",
+   "width": 1,
+   "row": {
+    "3": 1,
+    "4": 1
+   },
+   "col": {
+    "3": 1,
+    "4": 1
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "Name/Surname",
+      "size": "regular",
+      "value": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/NameSurname\"]",
+      "sparkline": false,
+      "animate": true
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "Weight/Height/Age",
+      "size": "regular",
+      "value": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/WeightHeightAge\"]",
+      "animate": true
+     }
+    }
+   ]
+  },
+  {
+   "width": 1,
+   "row": {
+    "2": 14,
+    "3": 13,
+    "4": 15,
+    "5": 25
+   },
+   "col": {
+    "2": 1,
+    "3": 2,
+    "4": 1,
+    "5": 2
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "html",
+     "settings": {
+      "html": "<html>\n<body>\n<h4 align = \"center\"><b>ON/OFF Timer</b></h4>\n<h4 align = \"center\">สำหรับ NETPIE Freeboard</h4>\n<p align = \"center\">--------------------------------------</p>\n<h4 id=\"clock\" align = \"center\"></h4>\n<p id=\"timeon\" align = \"center\"></p>\n<p id=\"timeoff\" align = \"center\"></p>\n \n<script>\n\n\nvar netpie_timer = setInterval(clock_handler, 1000);\nfunction clock_handler() \n{\n    var time_now = new Date();\n    document.getElementById(\"clock\").innerHTML = \"ขณะนี้เวลา | \" + time_now.toLocaleTimeString();\n    \n}\nvar netpie_timer = setInterval(update_realtime, 5000);\nfunction update_realtime() \n{\n    var time_now = new Date();\n    microgear[\"dashboard\"].chat(\"testled\", time_now.toLocaleTimeString()+\"#Time\");\n    \n}\n\n</script>\n</body>\n</html>",
+      "height": 4
+     }
+    }
+   ]
+  },
+  {
+   "title": "CHECK",
+   "width": 1,
+   "row": {
+    "2": 24,
+    "3": 15,
+    "4": 7,
+    "5": 1
+   },
+   "col": {
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 1
+   },
+   "col_width": 1,
+   "widgets": [
+    {
+     "type": "indicator",
+     "settings": {
+      "value": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/statusDetection\"]==\"Normal\"",
+      "on_text": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/statusDetection\"]"
+     }
+    },
+    {
+     "type": "text_widget",
+     "settings": {
+      "title": "check status (MPU6050 sensor)",
+      "size": "regular",
+      "value": "datasources[\"Datasource1\"][\"/AppTestNP/gearname/smartSensor/statusDetection\"]",
+      "animate": true
+     }
+    },
+    {
+     "type": "Button",
+     "settings": {
+      "caption": "SEND",
+      "text": "CHECK",
+      "color": "yellow",
+      "onClick": "microgear[\"dashboard\"].chat(\"testled\",\"CHECK\")"
+     }
+    }
+   ]
+  }
+ ],
+ "datasources": [
+  {
+   "name": "Datasource1",
+   "type": "netpie_microgear",
+   "settings": {
+    "appid": "AppTestNP",
+    "key": "4jVFfW593iEi1Sd",
+    "secret": "wtrX7nv8zIPn7jsSsBoTgMIRu",
+    "alias": "testled",
+    "microgearRef": "dashboard",
+    "topics": "/#",
+    "onConnectedAction": "/#",
+    "name": "Datasource1"
+   }
+  }
+ ],
+ "columns": 4
+}
