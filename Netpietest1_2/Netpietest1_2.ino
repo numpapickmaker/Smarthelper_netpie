@@ -82,12 +82,12 @@ void onConnected(char *attribute, uint8_t* msg, unsigned int msglen) {
 }
 
 void BatteryADC() {
-  if (timerAnalog >= 100000) {
+  if (timerAnalog >= 10000) {
     val = (analogRead(analogPin) * 100) / 1023; //convert to %
     microgear.chat(ALIAS2, (String)val);
     Serial.println(val);
     timerAnalog = 0;
-    microgear.chat(ALIAS3, "Normal"+RealTime);
+    microgear.chat(ALIAS3, "Update : "+RealTime+"Normal");
     setInformation();
   }
   timerAnalog++;
@@ -168,7 +168,8 @@ void loop() {
     microgear.loop();
    // setInformation();
     BatteryADC();
-    
+    IMU();
+
   } else {
     if (millis() - timer >= 5000) {
       Serial.println("connection lost, reconnect...");
@@ -178,6 +179,6 @@ void loop() {
 
 
   }
-
+  
 }
 //}
