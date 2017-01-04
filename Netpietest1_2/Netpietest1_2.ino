@@ -41,7 +41,7 @@ int valx , valy , valz;
 //easyConfig conf(server);
 
 // Initialize Wifi connection to the router
-char ssid[] = "chainarin";              // your network SSID (name)
+char ssid[] = "Gomasum__F3";              // your network SSID (name)
 char password[] = "860790128";                              // your network key
 
 /* If a new message arrives, do this */
